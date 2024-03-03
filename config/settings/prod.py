@@ -5,17 +5,17 @@ from .base import *
 env = environ.Env(DEBUG=(bool, False))
 environ.Env.read_env(str(BASE_DIR / ".env.prod"))
 
-THIRD_PARTY_APP = [
-    "django_extensions",
-]  # third party apps goe here
-
-INSTALLED_APPS = INSTALLED_APPS + THIRD_PARTY_APP
-
 SECRET_KEY = env.str("SECRET_KEY")
 DEBUG = env.bool("DEBUG")
 
-ALLOWED_HOSTS = ["localhost", "127.0.0.1"]  # modify later
-CSRF_TRUSTED_ORIGINS = []  # modify later
+ALLOWED_HOSTS = [
+    "localhost",
+    "127.0.0.1",
+    "django-railway-demo-production.up.railway.app",
+]  # modify later
+CSRF_TRUSTED_ORIGINS = [
+    "https://django-railway-demo-production.up.railway.app"
+]  # modify later
 
 
 # DATABASES = {

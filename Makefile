@@ -20,3 +20,6 @@ prod-migrate:
 
 prod-gunicorn:
 	gunicorn config.wsgi --env DJANGO_SETTINGS_MODULE=config.settings.prod
+
+prod-collectstatic:
+	python manage.py collectstatic --settings=config.settings.prod
