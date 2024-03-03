@@ -13,10 +13,11 @@ ALLOWED_HOSTS = [
     "127.0.0.1",
     "django-railway-demo-production.up.railway.app",
 ]  # modify later
-CSRF_TRUSTED_ORIGINS = [
-    "https://django-railway-demo-production.up.railway.app"
-]  # modify later
+CSRF_TRUSTED_ORIGINS = ["https://django-railway-demo-production.up.railway.app"]
 
+MIDDLEWARE += [
+    "whitenoise.middleware.WhiteNoiseMiddleware",
+]
 
 # DATABASES = {
 #     "default": {
