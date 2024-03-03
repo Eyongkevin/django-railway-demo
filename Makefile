@@ -12,3 +12,11 @@ dev-install:
 	pip install -r requirements/dev.txt
 dev-test:
 	python3 manage.py test --settings=config.settings.dev
+
+prod-install:
+	pip install -r requirements/prod.txt
+prod-migrate:
+	python3 manage.py migrate --settings=config.settings.prod
+
+prod-gunicorn:
+	gunicorn config.wsgi --env DJANGO_SETTINGS_MODULE=config.settings.prod
